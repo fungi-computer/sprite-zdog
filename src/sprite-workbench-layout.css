@@ -1,0 +1,75 @@
+@source "./sprite.stories.tsx";
+
+/*
+ * Sprite's story is outside Caps' Tailwind source boundary. Keep its compact
+ * layout here so the workbench does not depend on utilities that the Caps
+ * stylesheet did not compile for this package.
+ */
+[data-sprite-page] > [data-sprite-content] {
+  display: grid;
+  width: min(100%, 70rem);
+  margin-inline: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+[data-sprite-header] {
+  display: grid;
+  gap: 0.5rem;
+}
+
+[data-sprite-layout] {
+  display: grid;
+  gap: 1rem;
+}
+
+[data-sprite-gallery] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+[data-sprite-gallery] > button {
+  display: flex;
+  min-height: 12rem;
+  height: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+[data-sprite-gallery-avatar] {
+  display: grid;
+  height: 6rem;
+  flex: 0 0 6rem;
+  place-items: center;
+}
+
+[data-sprite-size-options] {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (min-width: 48rem) {
+  [data-sprite-page] > [data-sprite-content] {
+    padding: 2rem;
+  }
+
+  [data-sprite-header] {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+
+  [data-sprite-gallery] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  [data-sprite-layout] {
+    grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "@fungi.computer/sprite-zdog",
+  "version": "0.0.1",
+  "author": "Levi <levi@technomancy.dev>",
+  "description": "Optional Zdog avatar renderer and portable scene authoring",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./author": {
+      "types": "./dist/author.d.ts",
+      "import": "./dist/author.js"
+    },
+    "./portable": {
+      "types": "./dist/portable.d.ts",
+      "import": "./dist/portable.js"
+    },
+    "./builtins": {
+      "types": "./dist/builtins/index.d.ts",
+      "import": "./dist/builtins/index.js"
+    },
+    "./builtins/base": {
+      "types": "./dist/builtins/base.d.ts",
+      "import": "./dist/builtins/base.js"
+    },
+    "./builtins/mushroom": {
+      "types": "./dist/builtins/mushroom.d.ts",
+      "import": "./dist/builtins/mushroom.js"
+    },
+    "./builtins/cat": {
+      "types": "./dist/builtins/cat.d.ts",
+      "import": "./dist/builtins/cat.js"
+    },
+    "./builtins/burger": {
+      "types": "./dist/builtins/burger.d.ts",
+      "import": "./dist/builtins/burger.js"
+    },
+    "./mushroom": {
+      "types": "./dist/mushroom.d.ts",
+      "import": "./dist/mushroom.js"
+    },
+    "./cat": {
+      "types": "./dist/cat.d.ts",
+      "import": "./dist/cat.js"
+    },
+    "./burger": {
+      "types": "./dist/burger.d.ts",
+      "import": "./dist/burger.js"
+    },
+    "./catalog": {
+      "types": "./dist/catalog.d.ts",
+      "import": "./dist/catalog.js"
+    },
+    "./avatar": {
+      "types": "./dist/avatar.d.ts",
+      "import": "./dist/avatar.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "node --input-type=module --eval \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\"",
+    "lint": "eslint src scripts test vitest.config.ts --max-warnings=0 && ../../node_modules/.bin/oxlint --config ../../oxlint.config.ts --deny-warnings src scripts test vitest.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "pnpm run clean && tsc -p tsconfig.build.json",
+    "generate:mushroom": "tsx scripts/generate-mushroom.ts && prettier --write src/mushroom.character.json",
+    "test": "vitest run --config vitest.config.ts",
+    "docs": "tsx ../../tooling/repository/src/docs/cli.ts check --root ../..",
+    "docs:write": "tsx ../../tooling/repository/src/docs/cli.ts write --root ../..",
+    "pack": "mkdir -p ../../.botanical/sprite-pack && pnpm pack --pack-destination ../../.botanical/sprite-pack",
+    "smoke": "node --input-type=module -e \"import('./dist/mushroom.js').then(({ default: mushroom }) => { if (mushroom.document.renderer !== 'zdog') process.exit(1); })\"",
+    "stranger": "tsx ../../tooling/repository/src/artifacts/cli.ts --repo-root ../.. .",
+    "test:styles": "node scripts/render-styles.browser.mjs",
+    "format:check": "node ../../tooling/repository/scripts/format-package-check.mjs",
+    "lint:anti-slop": "node ../../tooling/repository/scripts/lint-package-anti-slop.mjs"
+  },
+  "dependencies": {
+    "@fungi.computer/sprite": "workspace:*",
+    "effect": "4.0.2",
+    "animejs": "4.5.0",
+    "zdog": "1.1.3",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "@types/react": "18.3.3",
+    "jsdom": "29.0.1",
+    "playwright": "1.62.1",
+    "react": "18.3.1",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  },
+  "botanical": {
+    "role": "package",
+    "operations": {
+      "lint": "required",
+      "typecheck": "required",
+      "build": "required",
+      "test": "required",
+      "docs": "required",
+      "pack": "required",
+      "smoke": "required",
+      "stranger": "required"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fungi-computer/sprite-zdog.git"
+  }
+}

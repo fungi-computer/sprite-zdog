@@ -1,0 +1,1930 @@
+{
+  "version": 1,
+  "name": "mushroom",
+  "renderer": "zdog",
+  "controls": {
+    "body": {
+      "type": "color",
+      "label": "body",
+      "default": "#fff7e4"
+    },
+    "cap": {
+      "type": "color",
+      "label": "cap",
+      "default": "#f98284"
+    },
+    "capSpot": {
+      "type": "color",
+      "label": "capSpot",
+      "default": "#ffe6c6"
+    },
+    "eye": {
+      "type": "color",
+      "label": "eye",
+      "default": "#28282e"
+    },
+    "mouth": {
+      "type": "color",
+      "label": "mouth",
+      "default": "#28282e"
+    },
+    "blush": {
+      "type": "color",
+      "label": "blush",
+      "default": "#feaae4"
+    },
+    "dead": {
+      "type": "color",
+      "label": "dead",
+      "default": "#6c5671"
+    },
+    "deadTongue": {
+      "type": "color",
+      "label": "deadTongue",
+      "default": "#d9c8bf"
+    },
+    "tongue": {
+      "type": "color",
+      "label": "tongue",
+      "default": "#f98284"
+    },
+    "sweat": {
+      "type": "color",
+      "label": "sweat",
+      "default": "#accce4"
+    },
+    "white": {
+      "type": "color",
+      "label": "white",
+      "default": "#ffffff"
+    }
+  },
+  "data": {
+    "root": "node-0",
+    "nodes": [
+      {
+        "id": "node-0",
+        "kind": "group",
+        "options": {
+          "name": "root"
+        }
+      },
+      {
+        "id": "node-1",
+        "parent": "node-0",
+        "kind": "group",
+        "options": {
+          "name": "body",
+          "updateSort": true
+        }
+      },
+      {
+        "id": "node-2",
+        "parent": "node-1",
+        "kind": "hemisphere",
+        "options": {
+          "name": "body.hemisphere",
+          "translate": {
+            "y": 2
+          },
+          "rotate": {
+            "x": 4.71238898038469
+          },
+          "color": "\u0000sprite-color:body",
+          "stroke": false,
+          "backface": "\u0000sprite-color:cap",
+          "diameter": 32
+        }
+      },
+      {
+        "id": "node-3",
+        "parent": "node-1",
+        "kind": "hemisphere",
+        "options": {
+          "name": "cap.hemisphere",
+          "translate": {
+            "y": 2
+          },
+          "rotate": {
+            "x": 1.5707963267948966
+          },
+          "color": "\u0000sprite-color:cap",
+          "stroke": false,
+          "backface": "\u0000sprite-color:capSpot",
+          "diameter": 42
+        }
+      },
+      {
+        "id": "node-4",
+        "parent": "node-3",
+        "kind": "shape",
+        "options": {
+          "name": "cap.spot.front",
+          "translate": {
+            "x": -8,
+            "y": 8,
+            "z": 12
+          },
+          "color": "\u0000sprite-color:capSpot",
+          "stroke": 12,
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-5",
+        "parent": "node-3",
+        "kind": "shape",
+        "options": {
+          "name": "cap.spot.top",
+          "translate": {
+            "x": 8,
+            "y": -4,
+            "z": 13
+          },
+          "color": "\u0000sprite-color:capSpot",
+          "stroke": 18,
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-6",
+        "parent": "node-1",
+        "kind": "group",
+        "options": {
+          "name": "face",
+          "translate": {
+            "y": 7,
+            "z": 8
+          }
+        }
+      },
+      {
+        "id": "node-7",
+        "parent": "node-6",
+        "kind": "group",
+        "options": {
+          "name": "eyes"
+        }
+      },
+      {
+        "id": "node-8",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.normal"
+        }
+      },
+      {
+        "id": "node-9",
+        "parent": "node-8",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-10",
+        "parent": "node-9",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-11",
+        "parent": "node-9",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0.5,
+          "fill": true,
+          "width": 1.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-12",
+        "parent": "node-8",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-13",
+        "parent": "node-12",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-14",
+        "parent": "node-12",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0.5,
+          "fill": true,
+          "width": 1.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-15",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.sad"
+        }
+      },
+      {
+        "id": "node-16",
+        "parent": "node-15",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -1
+          },
+          "rotate": {
+            "z": 0.2
+          }
+        }
+      },
+      {
+        "id": "node-17",
+        "parent": "node-16",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 4
+        }
+      },
+      {
+        "id": "node-18",
+        "parent": "node-16",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0.5,
+          "fill": true,
+          "width": 1.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-19",
+        "parent": "node-15",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -1
+          },
+          "rotate": {
+            "z": -0.2
+          }
+        }
+      },
+      {
+        "id": "node-20",
+        "parent": "node-19",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 4
+        }
+      },
+      {
+        "id": "node-21",
+        "parent": "node-19",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0.5,
+          "fill": true,
+          "width": 1.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-22",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.surprised"
+        }
+      },
+      {
+        "id": "node-23",
+        "parent": "node-22",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-24",
+        "parent": "node-23",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 4,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-25",
+        "parent": "node-23",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0.5,
+          "fill": true,
+          "width": 1.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-26",
+        "parent": "node-22",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-27",
+        "parent": "node-26",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 4,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-28",
+        "parent": "node-26",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0.5,
+          "fill": true,
+          "width": 1.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-29",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.happy"
+        }
+      },
+      {
+        "id": "node-30",
+        "parent": "node-29",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 2
+            },
+            {
+              "bezier": [
+                {
+                  "x": -1,
+                  "y": -1.5
+                },
+                {
+                  "x": 1,
+                  "y": -1.5
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-31",
+        "parent": "node-29",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 2
+            },
+            {
+              "bezier": [
+                {
+                  "x": -1,
+                  "y": -1.5
+                },
+                {
+                  "x": 1,
+                  "y": -1.5
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-32",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.angry"
+        }
+      },
+      {
+        "id": "node-33",
+        "parent": "node-32",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -1
+          },
+          "rotate": {
+            "z": -0.3
+          }
+        }
+      },
+      {
+        "id": "node-34",
+        "parent": "node-33",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 4
+        }
+      },
+      {
+        "id": "node-35",
+        "parent": "node-33",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "y": -1
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -3,
+              "y": -3
+            },
+            {
+              "x": 3,
+              "y": -2
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-36",
+        "parent": "node-32",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -1
+          },
+          "rotate": {
+            "z": 0.3
+          }
+        }
+      },
+      {
+        "id": "node-37",
+        "parent": "node-36",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 4
+        }
+      },
+      {
+        "id": "node-38",
+        "parent": "node-36",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "y": -1
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -3,
+              "y": -3
+            },
+            {
+              "x": 3,
+              "y": -2
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-39",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.dead"
+        }
+      },
+      {
+        "id": "node-40",
+        "parent": "node-39",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-41",
+        "parent": "node-40",
+        "kind": "shape",
+        "options": {
+          "color": "\u0000sprite-color:dead",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2,
+              "y": -3
+            },
+            {
+              "x": 2,
+              "y": 3
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-42",
+        "parent": "node-40",
+        "kind": "shape",
+        "options": {
+          "color": "\u0000sprite-color:dead",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": 2,
+              "y": -3
+            },
+            {
+              "x": -2,
+              "y": 3
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-43",
+        "parent": "node-39",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-44",
+        "parent": "node-43",
+        "kind": "shape",
+        "options": {
+          "color": "\u0000sprite-color:dead",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2,
+              "y": -3
+            },
+            {
+              "x": 2,
+              "y": 3
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-45",
+        "parent": "node-43",
+        "kind": "shape",
+        "options": {
+          "color": "\u0000sprite-color:dead",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": 2,
+              "y": -3
+            },
+            {
+              "x": -2,
+              "y": 3
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-46",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.confused"
+        }
+      },
+      {
+        "id": "node-47",
+        "parent": "node-46",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-48",
+        "parent": "node-47",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-49",
+        "parent": "node-47",
+        "kind": "shape",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -3,
+              "y": -4
+            },
+            {
+              "x": 3,
+              "y": -2
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-50",
+        "parent": "node-46",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-51",
+        "parent": "node-50",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-52",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.sleepy"
+        }
+      },
+      {
+        "id": "node-53",
+        "parent": "node-52",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -1
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 1
+            },
+            {
+              "bezier": [
+                {
+                  "x": -1,
+                  "y": 0
+                },
+                {
+                  "x": 1,
+                  "y": 0
+                },
+                {
+                  "x": 2.5,
+                  "y": 1
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-54",
+        "parent": "node-52",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -1
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 1
+            },
+            {
+              "bezier": [
+                {
+                  "x": -1,
+                  "y": 0
+                },
+                {
+                  "x": 1,
+                  "y": 0
+                },
+                {
+                  "x": 2.5,
+                  "y": 1
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-55",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.nervous"
+        }
+      },
+      {
+        "id": "node-56",
+        "parent": "node-55",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-57",
+        "parent": "node-56",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-58",
+        "parent": "node-55",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          }
+        }
+      },
+      {
+        "id": "node-59",
+        "parent": "node-58",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-60",
+        "parent": "node-55",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 10,
+            "y": 4
+          }
+        }
+      },
+      {
+        "id": "node-61",
+        "parent": "node-60",
+        "kind": "shape",
+        "options": {
+          "color": "\u0000sprite-color:sweat",
+          "stroke": 2,
+          "path": [
+            {
+              "x": 0,
+              "y": -4
+            }
+          ]
+        }
+      },
+      {
+        "id": "node-62",
+        "parent": "node-60",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": 2
+          },
+          "color": "\u0000sprite-color:sweat",
+          "stroke": 0,
+          "fill": true,
+          "width": 3,
+          "height": 4
+        }
+      },
+      {
+        "id": "node-63",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.shy"
+        }
+      },
+      {
+        "id": "node-64",
+        "parent": "node-63",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 2.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-65",
+        "parent": "node-63",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 2.5,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-66",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.cute"
+        }
+      },
+      {
+        "id": "node-67",
+        "parent": "node-66",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -1
+          }
+        }
+      },
+      {
+        "id": "node-68",
+        "parent": "node-67",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 5,
+          "height": 6
+        }
+      },
+      {
+        "id": "node-69",
+        "parent": "node-67",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1.5,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0,
+          "fill": true,
+          "width": 2.5,
+          "height": 3
+        }
+      },
+      {
+        "id": "node-70",
+        "parent": "node-67",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": -1.5,
+            "y": 1.5,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0,
+          "fill": true,
+          "width": 1,
+          "height": 1
+        }
+      },
+      {
+        "id": "node-71",
+        "parent": "node-66",
+        "kind": "group",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -1
+          }
+        }
+      },
+      {
+        "id": "node-72",
+        "parent": "node-71",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 5,
+          "height": 6
+        }
+      },
+      {
+        "id": "node-73",
+        "parent": "node-71",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": -1.5,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0,
+          "fill": true,
+          "width": 2.5,
+          "height": 3
+        }
+      },
+      {
+        "id": "node-74",
+        "parent": "node-71",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": -1.5,
+            "y": 1.5,
+            "z": 1
+          },
+          "color": "\u0000sprite-color:white",
+          "stroke": 0,
+          "fill": true,
+          "width": 1,
+          "height": 1
+        }
+      },
+      {
+        "id": "node-75",
+        "parent": "node-7",
+        "kind": "group",
+        "options": {
+          "name": "eyes.wink"
+        }
+      },
+      {
+        "id": "node-76",
+        "parent": "node-75",
+        "kind": "group",
+        "options": {
+          "name": "eyes.wink.left"
+        }
+      },
+      {
+        "id": "node-77",
+        "parent": "node-76",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 2
+            },
+            {
+              "bezier": [
+                {
+                  "x": -1,
+                  "y": -1.5
+                },
+                {
+                  "x": 1,
+                  "y": -1.5
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-78",
+        "parent": "node-76",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-79",
+        "parent": "node-75",
+        "kind": "group",
+        "options": {
+          "name": "eyes.wink.right"
+        }
+      },
+      {
+        "id": "node-80",
+        "parent": "node-79",
+        "kind": "shape",
+        "options": {
+          "translate": {
+            "x": 6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 2
+            },
+            {
+              "bezier": [
+                {
+                  "x": -1,
+                  "y": -1.5
+                },
+                {
+                  "x": 1,
+                  "y": -1.5
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-81",
+        "parent": "node-79",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": -6,
+            "y": -2
+          },
+          "color": "\u0000sprite-color:eye",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 5
+        }
+      },
+      {
+        "id": "node-82",
+        "parent": "node-6",
+        "kind": "group",
+        "options": {
+          "name": "mouth"
+        }
+      },
+      {
+        "id": "node-83",
+        "parent": "node-82",
+        "kind": "shape",
+        "options": {
+          "name": "mouth.normal",
+          "translate": {
+            "y": 2
+          },
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 0
+            },
+            {
+              "x": 2.5,
+              "y": 0
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-84",
+        "parent": "node-82",
+        "kind": "shape",
+        "options": {
+          "name": "mouth.happy",
+          "translate": {
+            "y": 2
+          },
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 2
+            },
+            {
+              "bezier": [
+                {
+                  "x": 0,
+                  "y": 4
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-85",
+        "parent": "node-82",
+        "kind": "shape",
+        "options": {
+          "name": "mouth.sad",
+          "translate": {
+            "y": 2
+          },
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1.5,
+          "path": [
+            {
+              "x": -2.5,
+              "y": 2
+            },
+            {
+              "bezier": [
+                {
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                },
+                {
+                  "x": 2.5,
+                  "y": 2
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-86",
+        "parent": "node-82",
+        "kind": "shape",
+        "options": {
+          "name": "mouth.small",
+          "translate": {
+            "y": 2
+          },
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1,
+          "path": [
+            {
+              "x": -1.5,
+              "y": 0
+            },
+            {
+              "x": 1.5,
+              "y": 0
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-87",
+        "parent": "node-82",
+        "kind": "shape",
+        "options": {
+          "name": "mouth.worried",
+          "translate": {
+            "y": 2
+          },
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1,
+          "path": [
+            {
+              "x": -2,
+              "y": 1
+            },
+            {
+              "bezier": [
+                {
+                  "x": -0.5,
+                  "y": 0.5
+                },
+                {
+                  "x": 0.5,
+                  "y": 0.5
+                },
+                {
+                  "x": 2,
+                  "y": 1
+                }
+              ]
+            }
+          ],
+          "closed": false
+        }
+      },
+      {
+        "id": "node-88",
+        "parent": "node-82",
+        "kind": "ellipse",
+        "options": {
+          "name": "mouth.pout",
+          "translate": {
+            "y": 3
+          },
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 2,
+          "height": 2.5
+        }
+      },
+      {
+        "id": "node-89",
+        "parent": "node-82",
+        "kind": "ellipse",
+        "options": {
+          "name": "mouth.surprised",
+          "translate": {
+            "y": 3
+          },
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 4
+        }
+      },
+      {
+        "id": "node-90",
+        "parent": "node-82",
+        "kind": "group",
+        "options": {
+          "name": "mouth.dead",
+          "translate": {
+            "y": 5
+          }
+        }
+      },
+      {
+        "id": "node-91",
+        "parent": "node-90",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:dead",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 3,
+          "height": 2
+        }
+      },
+      {
+        "id": "node-92",
+        "parent": "node-90",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "y": 0.5
+          },
+          "color": "\u0000sprite-color:deadTongue",
+          "stroke": 0,
+          "fill": true,
+          "width": 1.5,
+          "height": 1
+        }
+      },
+      {
+        "id": "node-93",
+        "parent": "node-82",
+        "kind": "group",
+        "options": {
+          "name": "mouth.open",
+          "translate": {
+            "y": 2
+          }
+        }
+      },
+      {
+        "id": "node-94",
+        "parent": "node-93",
+        "kind": "ellipse",
+        "options": {
+          "color": "\u0000sprite-color:mouth",
+          "stroke": 1.5,
+          "fill": true,
+          "width": 6,
+          "height": 4
+        }
+      },
+      {
+        "id": "node-95",
+        "parent": "node-93",
+        "kind": "ellipse",
+        "options": {
+          "name": "mouth.tongue",
+          "translate": {
+            "y": 1
+          },
+          "color": "\u0000sprite-color:tongue",
+          "stroke": 0,
+          "fill": true,
+          "width": 3,
+          "height": 1.5
+        }
+      },
+      {
+        "id": "node-96",
+        "parent": "node-6",
+        "kind": "group",
+        "options": {
+          "name": "blush.off"
+        }
+      },
+      {
+        "id": "node-97",
+        "parent": "node-6",
+        "kind": "group",
+        "options": {
+          "name": "blush.medium"
+        }
+      },
+      {
+        "id": "node-98",
+        "parent": "node-97",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": -10,
+            "y": 4
+          },
+          "color": "\u0000sprite-color:blush",
+          "stroke": 1,
+          "fill": true,
+          "width": 5,
+          "height": 2.5
+        }
+      },
+      {
+        "id": "node-99",
+        "parent": "node-97",
+        "kind": "ellipse",
+        "options": {
+          "translate": {
+            "x": 10,
+            "y": 4
+          },
+          "color": "\u0000sprite-color:blush",
+          "stroke": 1,
+          "fill": true,
+          "width": 5,
+          "height": 2.5
+        }
+      }
+    ],
+    "palette": {
+      "body": "#fff7e4",
+      "cap": "#f98284",
+      "capSpot": "#ffe6c6",
+      "eye": "#28282e",
+      "mouth": "#28282e",
+      "blush": "#feaae4",
+      "dead": "#6c5671",
+      "deadTongue": "#d9c8bf",
+      "tongue": "#f98284",
+      "sweat": "#accce4",
+      "white": "#ffffff"
+    },
+    "variants": {
+      "eyes": {
+        "normal": "node-8",
+        "happy": "node-29",
+        "sad": "node-15",
+        "angry": "node-32",
+        "surprised": "node-22",
+        "dead": "node-39",
+        "confused": "node-46",
+        "sleepy": "node-52",
+        "nervous": "node-55",
+        "shy": "node-63",
+        "wink": "node-76",
+        "cute": "node-66",
+        "wink.left": "node-76",
+        "wink.right": "node-79"
+      },
+      "mouth": {
+        "normal": "node-83",
+        "happy": "node-84",
+        "sad": "node-85",
+        "angry": "node-85",
+        "surprised": "node-89",
+        "dead": "node-90",
+        "small": "node-86",
+        "worried": "node-87",
+        "pout": "node-88",
+        "open": "node-93"
+      },
+      "blush": {
+        "off": "node-96",
+        "small": "node-97",
+        "medium": "node-97",
+        "big": "node-97"
+      }
+    },
+    "expressions": {
+      "angry": {
+        "variants": {
+          "eyes": "angry",
+          "mouth": "angry",
+          "blush": "off"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 1,
+            "y": 0
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "confused": {
+        "variants": {
+          "eyes": "confused",
+          "mouth": "normal",
+          "blush": "off"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": 0.5
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "cute": {
+        "variants": {
+          "eyes": "cute",
+          "mouth": "happy",
+          "blush": "big"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": -2.5
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "dead": {
+        "variants": {
+          "eyes": "dead",
+          "mouth": "dead",
+          "blush": "off"
+        }
+      },
+      "happy": {
+        "variants": {
+          "eyes": "happy",
+          "mouth": "happy",
+          "blush": "medium"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": -2
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "nervous": {
+        "variants": {
+          "eyes": "nervous",
+          "mouth": "worried",
+          "blush": "off"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": -0.5,
+            "y": -1
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "normal": {
+        "variants": {
+          "eyes": "normal",
+          "mouth": "normal",
+          "blush": "off"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": 1
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "pleading": {
+        "variants": {
+          "eyes": "cute",
+          "mouth": "pout",
+          "blush": "medium"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": -1
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "sad": {
+        "variants": {
+          "eyes": "sad",
+          "mouth": "sad",
+          "blush": "off"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": 2
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "shy": {
+        "variants": {
+          "eyes": "shy",
+          "mouth": "small",
+          "blush": "small"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": 1.5
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "sleepy": {
+        "variants": {
+          "eyes": "sleepy",
+          "mouth": "small",
+          "blush": "off"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": 2
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "surprised": {
+        "variants": {
+          "eyes": "surprised",
+          "mouth": "surprised",
+          "blush": "off"
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": -3
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      },
+      "wink": {
+        "variants": {
+          "mouth": "happy",
+          "blush": "small"
+        },
+        "variantChoices": {
+          "eyes": ["wink.left", "wink.right"]
+        },
+        "motion": {
+          "target": "root",
+          "translate": {
+            "x": 0,
+            "y": -1.5
+          },
+          "durationMs": 150,
+          "repeat": "none"
+        }
+      }
+    },
+    "activities": {
+      "idle": {
+        "motion": {
+          "target": "root",
+          "translate": {
+            "y": 0.5
+          },
+          "durationMs": 2000,
+          "repeat": "yoyo"
+        },
+        "mouseInfluence": 1
+      },
+      "listening": {
+        "motion": {
+          "target": "root",
+          "rotate": {
+            "x": -0.2
+          },
+          "durationMs": 300,
+          "repeat": "yoyo"
+        },
+        "mouseInfluence": 0.3
+      },
+      "processing": {
+        "mouseInfluence": 0.2
+      },
+      "speaking": {
+        "motion": {
+          "target": "root",
+          "translate": {
+            "y": 0.5
+          },
+          "durationMs": 1500,
+          "repeat": "yoyo"
+        },
+        "mouseInfluence": 0,
+        "mouthCycle": [
+          {
+            "durationMs": 100,
+            "mouth": "open"
+          },
+          {
+            "durationMs": 150,
+            "mouth": "base"
+          },
+          {
+            "durationMs": 100,
+            "mouth": "open"
+          },
+          {
+            "durationMs": 200,
+            "mouth": "base"
+          }
+        ]
+      },
+      "thinking": {
+        "motion": {
+          "target": "root",
+          "rotate": {
+            "z": 0.1
+          },
+          "durationMs": 800,
+          "repeat": "yoyo"
+        },
+        "mouseInfluence": 0
+      },
+      "error": {
+        "motion": {
+          "target": "root",
+          "rotate": {
+            "x": 0.9
+          },
+          "durationMs": 600,
+          "repeat": "none"
+        },
+        "mouseInfluence": 0.1,
+        "geometry": {
+          "eyes": "dead",
+          "mouth": "dead"
+        }
+      }
+    },
+    "defaultPresentation": {
+      "activity": "idle",
+      "expression": "sleepy"
+    }
+  }
+}

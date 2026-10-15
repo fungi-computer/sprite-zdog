@@ -1,0 +1,8 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    // Package fixtures read this owner's public declarations, as typed lint does.
+    "typecheck": { "dependsOn": ["build"] },
+  },
+}

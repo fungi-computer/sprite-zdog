@@ -1,0 +1,115 @@
+{
+  "expectedTarballFiles": [
+    "package/LICENSE",
+    "package/README.md",
+    "package/dist/agent-proof/moth.d.ts",
+    "package/dist/agent-proof/moth.js",
+    "package/dist/author.d.ts",
+    "package/dist/author.js",
+    "package/dist/avatar.d.ts",
+    "package/dist/avatar.js",
+    "package/dist/builtins/base-face.d.ts",
+    "package/dist/builtins/base-face.js",
+    "package/dist/builtins/base.d.ts",
+    "package/dist/builtins/base.js",
+    "package/dist/builtins/burger.d.ts",
+    "package/dist/builtins/burger.js",
+    "package/dist/builtins/cat.d.ts",
+    "package/dist/builtins/cat.js",
+    "package/dist/builtins/index.d.ts",
+    "package/dist/builtins/index.js",
+    "package/dist/builtins/mushroom.d.ts",
+    "package/dist/builtins/mushroom.js",
+    "package/dist/burger.d.ts",
+    "package/dist/burger.js",
+    "package/dist/cat.d.ts",
+    "package/dist/cat.js",
+    "package/dist/catalog.d.ts",
+    "package/dist/catalog.js",
+    "package/dist/document.d.ts",
+    "package/dist/document.js",
+    "package/dist/index.d.ts",
+    "package/dist/index.js",
+    "package/dist/internal.d.ts",
+    "package/dist/internal.js",
+    "package/dist/mushroom.character.json",
+    "package/dist/mushroom.d.ts",
+    "package/dist/mushroom.js",
+    "package/dist/palette.d.ts",
+    "package/dist/palette.js",
+    "package/dist/portable.d.ts",
+    "package/dist/portable.js",
+    "package/dist/renderer.d.ts",
+    "package/dist/renderer.js",
+    "package/dist/zdog-runtime.d.ts",
+    "package/dist/zdog-runtime.js",
+    "package/package.json"
+  ],
+  "localDependencies": ["../sprite"],
+  "runtimeFixture": "test/stranger/runtime.mjs",
+  "typecheckFixture": "test/stranger/consumer.mts",
+  "docs": {
+    "sigil": "generateMedia",
+    "home": {
+      "lead": "Sprite Zdog gives Sprite a canvas renderer and three ready-made characters, mushroom, cat and burger, so you can show one without drawing it yourself.",
+      "example": {
+        "file": "home.ts",
+        "title": "Author a portable character",
+        "caption": "Builds a tiny Zdog scene with defineSprite, checks it, then converts it to the JSON character document Sprite renders. No canvas or DOM needed."
+      },
+      "ladder": {
+        "start": [
+          {
+            "title": "Quickstart",
+            "href": "/quickstart/",
+            "description": "Install the bundled mushroom as a local character and render it with Sprite."
+          },
+          {
+            "title": "Core concepts",
+            "href": "/concepts/#core-concepts",
+            "description": "Register the Zdog renderer, author scenes, and validate stored avatars."
+          }
+        ],
+        "tasks": [
+          {
+            "title": "Register the Zdog renderer",
+            "href": "/api/entry/",
+            "description": "The root export and builtinCharacters, Sprite's lazy local-character loaders."
+          },
+          {
+            "title": "Author a scene",
+            "href": "/api/author/",
+            "description": "defineSprite and check turn a scene definition into a validated receipt."
+          },
+          {
+            "title": "Load a built-in character",
+            "href": "/api/mushroom/",
+            "description": "Ready-to-load mushroom, cat and burger documents, each with its renderer."
+          },
+          {
+            "title": "Validate a stored avatar",
+            "href": "/api/avatar/",
+            "description": "avatarSchema, parseAvatar and deriveAgentAvatar for the built-in catalog."
+          }
+        ],
+        "reference": [
+          {
+            "title": "API reference",
+            "href": "/api/",
+            "description": "Every export, including ./author, ./portable and each built-in character."
+          },
+          {
+            "title": "Install",
+            "href": "/install/",
+            "description": "Entrypoints and the Sprite, Effect, Zod, animejs and zdog dependencies."
+          },
+          {
+            "title": "Status and limits",
+            "href": "/status/",
+            "description": "Stability, browser requirements and authoring limits."
+          }
+        ]
+      }
+    }
+  }
+}
