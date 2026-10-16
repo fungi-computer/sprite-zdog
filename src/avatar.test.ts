@@ -9,14 +9,14 @@ import {
 import {
   hslFromHex,
   hueDistance,
-  legacyAvatar,
+  seededAvatar,
 } from "@fungi.computer/sprite/avatar";
 import type { Avatar } from "@fungi.computer/sprite/avatar";
 
 describe("avatarSchema (bound to the built-in catalog)", () => {
   it("accepts the legacy fallback avatar", () => {
     expect(() =>
-      avatarSchema.parse(legacyAvatar("agent-gardener")),
+      avatarSchema.parse(seededAvatar("agent-gardener")),
     ).not.toThrow();
   });
 
