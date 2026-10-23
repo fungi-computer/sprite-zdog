@@ -42,6 +42,8 @@ export type SpriteRenderer = {
   setPalette(palette: Readonly<Record<string, string>>): void;
   pause(paused: boolean): void;
   tick(timestamp: number): boolean;
+  /** Seek paused animation timelines using an external clock. */
+  seek(timeMs: number): void;
   /** Draw pending changes now, unthrottled, as a paused player's still frame. */
   renderStill(): void;
   resize(): void;
@@ -422,6 +424,21 @@ class ZdogSpriteRenderer implements SpriteRenderer {
       if (paused) tween?.pause();
       else tween?.resume();
     }
+  }
+
+  seek(timeMs: number): void {
+    finite(timeMs, "timeMs");
+    if (timeMs < 0) throw new RangeError("timeMs must be nonnegative");
+    this.pause(true);
+    for (const tween of [
+      this.animationTween,
+      this.mouthCycleTimeline,
+      this.entryTween,
+    ]) {
+      tween?.seek(timeMs);
+    }
+    this.dirty = true;
+    this.renderStill();
   }
 
   tick(timestamp: number): boolean {

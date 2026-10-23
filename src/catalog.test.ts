@@ -59,8 +59,8 @@ describe("avatarCatalog", () => {
     expect(avatarCatalog.burger.identitySlots).toEqual(["topBun", "bottomBun"]);
   });
 
-  it("gives the mushroom 11 colour controls and 13 expressions", () => {
-    expect(Object.keys(avatarCatalog.mushroom.controls)).toHaveLength(11);
+  it("gives the mushroom 10 colour controls and 13 expressions", () => {
+    expect(Object.keys(avatarCatalog.mushroom.controls)).toHaveLength(10);
     expect(avatarCatalog.mushroom.expressions).toHaveLength(13);
   });
 });

@@ -325,3 +325,31 @@ describe("portable Zdog runtime", () => {
     },
   );
 });
+
+it("keeps an externally timed speaking head off the browser animation loop", async () => {
+  vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
+  const request = vi.spyOn(window, "requestAnimationFrame");
+  const player = createSprite({
+    characters: {
+      mushroom: () =>
+        Promise.resolve({
+          document: toCharacter(mushroom),
+          render: renderZdog,
+        }),
+    },
+  }).mount(window.document.createElement("div"));
+  player.set({ src: { local: "mushroom" }, activity: "speaking", timeMs: 500 });
+  await vi.waitFor(() => {
+    expect(player.state.status).toBe("ready");
+  });
+  const requests = request.mock.calls.length;
+  for (const timeMs of [100, 900, 100]) {
+    player.set({ src: { local: "mushroom" }, activity: "speaking", timeMs });
+    expect(player.state).toMatchObject({
+      status: "ready",
+      presentation: { timeMs },
+    });
+  }
+  expect(request.mock.calls.length).toBe(requests);
+  await player.dispose();
+});

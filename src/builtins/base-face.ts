@@ -16,7 +16,7 @@ export const buildBaseFace = (
   color: (slot: string) => string,
   parent: SceneNode,
   options: {
-    readonly blushMode?: "medium-alias" | "standard";
+    readonly blushMode?: "medium-alias" | "none" | "standard";
     readonly hideMouth?: boolean;
     readonly mouthTranslate?: { readonly y?: number; readonly z?: number };
   } = {},
@@ -477,11 +477,11 @@ export const buildBaseFace = (
     return group;
   };
   const blushOff = scene.group({ parent, name: "blush.off" });
-  // Mushroom and burger inherit one legacy medium blush node for all
-  // intensities. Its stroke is part of their geometry contract.
-  const blushMedium = blush("medium", 5, 2.5, 1, 10);
-  const blushVariants =
-    options.blushMode === "medium-alias"
+  const blushIntensities = (): Record<string, SceneNode> => {
+    // Burger inherits one legacy medium blush node for all intensities. Its
+    // stroke is part of its geometry contract.
+    const blushMedium = blush("medium", 5, 2.5, 1, 10);
+    return options.blushMode === "medium-alias"
       ? {
           off: blushOff,
           small: blushMedium,
@@ -494,6 +494,13 @@ export const buildBaseFace = (
           medium: blushMedium,
           big: blush("big", 7, 3.5, 2, 11),
         };
+  };
+  // "none" builds no blush geometry and reads no blush colour: whatever
+  // intensity an expression asks for is the one empty "off" node.
+  const blushVariants =
+    options.blushMode === "none"
+      ? { off: blushOff, small: blushOff, medium: blushOff, big: blushOff }
+      : blushIntensities();
 
   const orderedEyes = {
     normal: neutralEyes.normal,

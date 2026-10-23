@@ -12,12 +12,18 @@
     "package/dist/builtins/base-face.js",
     "package/dist/builtins/base.d.ts",
     "package/dist/builtins/base.js",
+    "package/dist/builtins/burger-input.d.ts",
+    "package/dist/builtins/burger-input.js",
     "package/dist/builtins/burger.d.ts",
     "package/dist/builtins/burger.js",
+    "package/dist/builtins/cat-input.d.ts",
+    "package/dist/builtins/cat-input.js",
     "package/dist/builtins/cat.d.ts",
     "package/dist/builtins/cat.js",
     "package/dist/builtins/index.d.ts",
     "package/dist/builtins/index.js",
+    "package/dist/builtins/mushroom-input.d.ts",
+    "package/dist/builtins/mushroom-input.js",
     "package/dist/builtins/mushroom.d.ts",
     "package/dist/builtins/mushroom.js",
     "package/dist/burger.d.ts",
@@ -47,7 +53,11 @@
   ],
   "localDependencies": ["../sprite"],
   "runtimeFixture": "test/stranger/runtime.mjs",
-  "typecheckFixture": "test/stranger/consumer.mts",
+  "typechecks": [
+    {
+      "fixture": "test/stranger/consumer.mts"
+    }
+  ],
   "docs": {
     "sigil": "generateMedia",
     "home": {

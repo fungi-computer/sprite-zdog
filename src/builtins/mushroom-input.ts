@@ -15,7 +15,6 @@ export const mushroomInput = {
     capSpot: "#ffe6c6",
     eye: "#28282e",
     mouth: "#28282e",
-    blush: "#feaae4",
     dead: "#6c5671",
     deadTongue: "#d9c8bf",
     tongue: "#f98284",
@@ -68,7 +67,7 @@ export const mushroomInput = {
       translate: { y: 7, z: 8 },
     });
     const variants = buildBaseFace(scene, color, face, {
-      blushMode: "medium-alias",
+      blushMode: "none",
     });
     return {
       root,

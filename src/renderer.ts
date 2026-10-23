@@ -58,6 +58,7 @@ const renderZdog: Renderer = (context) =>
       }),
     );
     native.pause(true);
+    let controlled = false;
     let presentationKey: string | undefined;
     let paletteKey: string | undefined;
     return {
@@ -98,11 +99,13 @@ const renderZdog: Renderer = (context) =>
           native.present({ activity: presentation.activity, expression });
           presentationKey = nextPresentation;
         }
+        controlled = presentation.timeMs !== undefined;
+        if (presentation.timeMs !== undefined) native.seek(presentation.timeMs);
         invalidate();
       },
       pause(value) {
-        paused = value;
-        native.pause(value);
+        paused = controlled || value;
+        native.pause(paused);
         if (paused && frame !== undefined) {
           view.cancelAnimationFrame(frame);
           frame = undefined;

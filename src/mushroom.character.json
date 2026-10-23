@@ -28,11 +28,6 @@
       "label": "mouth",
       "default": "#28282e"
     },
-    "blush": {
-      "type": "color",
-      "label": "blush",
-      "default": "#feaae4"
-    },
     "dead": {
       "type": "color",
       "label": "dead",
@@ -1546,46 +1541,6 @@
         "options": {
           "name": "blush.off"
         }
-      },
-      {
-        "id": "node-97",
-        "parent": "node-6",
-        "kind": "group",
-        "options": {
-          "name": "blush.medium"
-        }
-      },
-      {
-        "id": "node-98",
-        "parent": "node-97",
-        "kind": "ellipse",
-        "options": {
-          "translate": {
-            "x": -10,
-            "y": 4
-          },
-          "color": "\u0000sprite-color:blush",
-          "stroke": 1,
-          "fill": true,
-          "width": 5,
-          "height": 2.5
-        }
-      },
-      {
-        "id": "node-99",
-        "parent": "node-97",
-        "kind": "ellipse",
-        "options": {
-          "translate": {
-            "x": 10,
-            "y": 4
-          },
-          "color": "\u0000sprite-color:blush",
-          "stroke": 1,
-          "fill": true,
-          "width": 5,
-          "height": 2.5
-        }
       }
     ],
     "palette": {
@@ -1594,7 +1549,6 @@
       "capSpot": "#ffe6c6",
       "eye": "#28282e",
       "mouth": "#28282e",
-      "blush": "#feaae4",
       "dead": "#6c5671",
       "deadTongue": "#d9c8bf",
       "tongue": "#f98284",
@@ -1632,9 +1586,9 @@
       },
       "blush": {
         "off": "node-96",
-        "small": "node-97",
-        "medium": "node-97",
-        "big": "node-97"
+        "small": "node-96",
+        "medium": "node-96",
+        "big": "node-96"
       }
     },
     "expressions": {

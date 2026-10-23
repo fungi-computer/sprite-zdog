@@ -166,18 +166,16 @@ describe("Sprite built-in definitions", () => {
       "medium",
       "big",
     ]);
-    expect(state.variants.get("blush")?.get("small")).toBe(
-      state.variants.get("blush")?.get("medium"),
-    );
-    const mediumBlush = state.nodesByName.get("blush.medium");
-    expect(mediumBlush?.children).toHaveLength(2);
-    expect(mediumBlush?.children.map((node) => node.kind)).toEqual([
-      "ellipse",
-      "ellipse",
-    ]);
-    expect(mediumBlush?.children.map((node) => node.options.stroke)).toEqual([
-      1, 1,
-    ]);
+    // Shiitake never blushes: whichever expression asks for blush, every
+    // intensity is the one empty "off" node, with no blush geometry or colour.
+    const blushOff = state.nodesByName.get("blush.off");
+    for (const node of state.variants.get("blush")?.values() ?? [])
+      expect(node).toBe(blushOff);
+    expect(blushOff?.children).toHaveLength(0);
+    expect(
+      [...state.nodesByName.keys()].filter((name) => name.startsWith("blush.")),
+    ).toEqual(["blush.off"]);
+    expect(Object.keys(state.palette)).not.toContain("blush");
     expect([...(state.variants.get("eyes")?.keys() ?? [])]).toEqual([
       "normal",
       "happy",
