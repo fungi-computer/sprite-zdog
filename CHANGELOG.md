@@ -1,5 +1,13 @@
 # @fungi.computer/sprite-zdog
 
+## 0.3.0
+
+### Minor Changes
+
+- Changes since 0.2.0:
+
+  - feat(repository): scope docs-only gates
+
 ## 0.2.0
 
 ### Minor Changes
