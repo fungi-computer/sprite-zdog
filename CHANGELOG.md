@@ -1,5 +1,12 @@
 # @fungi.computer/sprite-zdog
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @fungi.computer/sprite@0.2.2
+
 ## 0.3.1
 
 ### Patch Changes
