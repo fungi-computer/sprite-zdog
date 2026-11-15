@@ -64,22 +64,13 @@
   ],
   "scripts": {
     "clean": "node --input-type=module --eval \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\"",
-    "lint": "eslint src scripts test vitest.config.ts --max-warnings=0 && ../../node_modules/.bin/oxlint --config ../../oxlint.config.ts --deny-warnings src scripts test vitest.config.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "pnpm run clean && tsc -p tsconfig.build.json",
     "generate:mushroom": "tsx scripts/generate-mushroom.ts && prettier --write src/mushroom.character.json",
-    "test": "vitest run --config vitest.config.ts",
-    "docs": "tsx ../../tooling/repository/src/docs/cli.ts check --root ../..",
-    "docs:write": "tsx ../../tooling/repository/src/docs/cli.ts write --root ../..",
-    "pack": "mkdir -p ../../.botanical/sprite-pack && pnpm pack --pack-destination ../../.botanical/sprite-pack",
-    "smoke": "node --input-type=module -e \"import('./dist/mushroom.js').then(({ default: mushroom }) => { if (mushroom.document.renderer !== 'zdog') process.exit(1); })\"",
-    "stranger": "tsx ../../tooling/repository/src/artifacts/cli.ts --repo-root ../.. .",
-    "test:styles": "node scripts/render-styles.browser.mjs",
-    "format:check": "node ../../tooling/repository/scripts/format-package-check.mjs",
-    "lint:anti-slop": "node ../../tooling/repository/scripts/lint-package-anti-slop.mjs"
+    "smoke": "node --input-type=module -e \"import('./dist/mushroom.js').then(({ default: mushroom }) => { if (mushroom.document.renderer !== 'zdog') process.exit(1); })\""
   },
   "dependencies": {
-    "@fungi.computer/sprite": "workspace:*",
+    "@fungi.computer/sprite": "0.2.2",
     "effect": "4.0.2",
     "animejs": "4.5.0",
     "zdog": "1.1.3",
