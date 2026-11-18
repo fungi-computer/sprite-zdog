@@ -1,27 +1,18 @@
 # Sprite Zdog (`@fungi.computer/sprite-zdog`)
 
-Sprite Zdog is an optional Canvas renderer for characters built with Zdog. It
-also provides built-in characters and tools for authoring a portable character
-document that [Sprite](../sprite/README.md) can load.
+Sprite Zdog is an optional add-on for Sprite that draws characters made with
+Zdog, a small 3D drawing library. It includes a mushroom and tools for making
+your own character.
 
-## Install or set up
+![The shipped mushroom character rendered by Sprite Zdog](docs/media/readme-mushroom.png)
+
+## Quick start
+
+Install it:
 
 ```sh
 npm install @fungi.computer/sprite-zdog
 ```
-
-The package ships ESM only and depends on Effect, Zod, `animejs`, `zdog`, and
-[Sprite](../sprite/README.md) at runtime. Add it only to a host that already
-uses Sprite and renders with Zdog. The parent Sprite host still owns the player
-and asset policy. The root entrypoint exports the Zdog renderer. `./author` and
-`./portable` support scene authoring. `./builtins` (and the individual
-`./builtins/base`, `./builtins/mushroom`, `./builtins/cat`, and
-`./builtins/burger` subpaths) expose the bundled authoring definitions.
-`./mushroom`, `./cat` and `./burger` provide ready-to-load local characters,
-each with its document and renderer. `./catalog` and `./avatar` provide pure
-avatar validation and derivation without importing the Canvas renderer.
-
-## Quick start
 
 This illustrative example installs the bundled mushroom as a local character and
 renders it with the Sprite React component:
@@ -53,6 +44,45 @@ remote asset access. The bundled character supplies its document and Zdog
 renderer together. The tests cover built-in characters and player integration in
 [`src/builtins.test.ts`](src/builtins.test.ts) and
 [`src/mushroom.test.ts`](src/mushroom.test.ts).
+
+## Common tasks
+
+### Show the built-in mushroom
+
+`builtinCharacters` plus `src={{ local: "mushroom" }}`. See the Quick start.
+
+### Author a character
+
+See [Core concepts](#core-concepts).
+
+### Know the limits
+
+See Limits and errors.
+
+## Reference
+
+### Overview
+
+Sprite Zdog is an optional Canvas renderer for characters built with Zdog. It
+also provides built-in characters and tools for authoring a portable character
+document that [Sprite](../sprite/README.md) can load.
+
+## Install or set up
+
+```sh
+npm install @fungi.computer/sprite-zdog
+```
+
+The package ships ESM only and depends on Effect, Zod, `animejs`, `zdog`, and
+[Sprite](../sprite/README.md) at runtime. Add it only to a host that already
+uses Sprite and renders with Zdog. The parent Sprite host still owns the player
+and asset policy. The root entrypoint exports the Zdog renderer. `./author` and
+`./portable` support scene authoring. `./builtins` (and the individual
+`./builtins/base`, `./builtins/mushroom`, `./builtins/cat`, and
+`./builtins/burger` subpaths) expose the bundled authoring definitions.
+`./mushroom`, `./cat` and `./burger` provide ready-to-load local characters,
+each with its document and renderer. `./catalog` and `./avatar` provide pure
+avatar validation and derivation without importing the Canvas renderer.
 
 ## Core concepts
 
