@@ -1,6 +1,6 @@
 {
   "name": "@fungi.computer/sprite-zdog",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Levi <levi@technomancy.dev>",
   "description": "Optional Zdog avatar renderer and portable scene authoring",
   "type": "module",
@@ -70,7 +70,7 @@
     "smoke": "node --input-type=module -e \"import('./dist/mushroom.js').then(({ default: mushroom }) => { if (mushroom.document.renderer !== 'zdog') process.exit(1); })\""
   },
   "dependencies": {
-    "@fungi.computer/sprite": "0.2.2",
+    "@fungi.computer/sprite": "0.2.3",
     "effect": "4.0.2",
     "animejs": "4.5.0",
     "zdog": "1.1.3",
